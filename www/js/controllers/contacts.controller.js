@@ -18,7 +18,7 @@ angular.module('app.controllers')
 	      	});
    }
 
-   $scope.detail = function(id){
+   $scope.detail = function(contact){
 	
    }
 
