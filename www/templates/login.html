@@ -7,17 +7,23 @@
       <div class="spacer" style="width: 300px; height: 23px;"></div>
       <ion-list id="entrar-list1">
         <label class="item item-input" id="entrar-input1">
-          <span class="input-label">Email</span>
-          <input type="email" placeholder="">
+          <span class="input-label">Email</span>  
+          <input type="email" placeholder="" ng-model="login.email">
         </label>
         <label class="item item-input" id="entrar-input2">
           <span class="input-label">Senha</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="login.password">
         </label>
       </ion-list>
+      <!-- <ul class="list" ng-if="errors">
+        <li class="item" ng-repeat="error in errors">
+          {{error}}
+        </li>
+      </ul> -->
+
       <div class="spacer" style="width: 300px; height: 13px;"></div>
-      <a ui-sref="tabsController.escanear" id="entrar-button2" class="button button-balanced  button-block">ENTRAR</a>
-      <a ui-sref="cadastrar" id="entrar-button3" style="text-align:right;" class="button button-positive  button-block button-clear">NOVO USUÁRIO</a>
+      <a ng-click="executeLogin()" id="entrar-button2" class="button button-balanced  button-block">ENTRAR</a>
+      <a ui-sref="newUser" id="entrar-button3" style="text-align:right;" class="button button-positive  button-block button-clear">NOVO USUÁRIO</a>
     </form>
   </ion-content>
 </ion-view>

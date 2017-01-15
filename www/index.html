@@ -9,13 +9,8 @@
     
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
+    
     <script src="cordova.js"></script>
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
     
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     
@@ -50,15 +45,25 @@
     </style>
 
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
-    
-     
     <script src="js/directives.js"></script>
+    
+    <script src="lib/ng-cordova.min.js"></script>
+    <script src="lib/qrcode.js"></script> 
+
+    <script src="js/controllers.js"></script>
+    <script src="js/controllers/login.controller.js"></script>
+    <script src="js/controllers/newUser.controller.js"></script>
+    <script src="js/controllers/scan.controller.js"></script>
+    <script src="js/controllers/profiles.controller.js"></script>
+    <script src="js/controllers/profileEdit.controller.js"></script>
      
     <script src="js/services.js"></script>
+    <script src="js/services/login.service.js"></script>
+    <script src="js/services/user.service.js"></script>
+    <script src="js/services/scan.service.js"></script>
+    <script src="js/services/profile.service.js"></script>
     
-
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->

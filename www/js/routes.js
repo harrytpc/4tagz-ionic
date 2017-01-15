@@ -10,22 +10,22 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.escanear', {
-    url: '/escanear',
+  .state('tabsController.scan', {
+    url: '/scan',
     views: {
       'tab1': {
-        templateUrl: 'templates/escanear.html',
-        controller: 'escanearCtrl'
+        templateUrl: 'templates/scan.html',
+        controller: 'ScanCtrl'
       }
     }
   })
 
-  .state('tabsController.perfis', {
-    url: '/perfis',
+  .state('tabsController.profiles', {
+    url: '/profiles',
     views: {
       'tab2': {
-        templateUrl: 'templates/perfis.html',
-        controller: 'perfisCtrl'
+        templateUrl: 'templates/profiles.html',
+        controller: 'ProfilesCtrl'
       }
     }
   })
@@ -41,7 +41,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController', {
-    url: '/page1',
+    url: '/home',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
@@ -56,24 +56,24 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('entrar', {
-    url: '/entrar',
-    templateUrl: 'templates/entrar.html',
-    controller: 'entrarCtrl'
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
 
-  .state('cadastrar', {
-    url: '/cadastrar',
-    templateUrl: 'templates/cadastrar.html',
-    controller: 'cadastrarCtrl'
+  .state('newUser', {
+    url: '/newUser',
+    templateUrl: 'templates/newUser.html',
+    controller: 'NewUserCtrl'
   })
 
-  .state('tabsController.meuPerfil', {
-    url: '/meuPerfil',
+  .state('tabsController.profileEdit', {
+    url: '/profileEdit',
     views: {
       'tab2': {
-        templateUrl: 'templates/meuPerfil.html',
-        controller: 'meuPerfilCtrl'
+        templateUrl: 'templates/profileEdit.html',
+        controller: 'ProfileEditCtrl'
       }
     }
   })
@@ -84,8 +84,7 @@ angular.module('app.routes', [])
     controller: 'nomeDaPessoaCtrl'
   })
 
-$urlRouterProvider.otherwise('/entrar')
-
+$urlRouterProvider.otherwise('/login')
   
 
 });

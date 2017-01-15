@@ -4,18 +4,18 @@
       <ion-list id="cadastrar-list2">
         <label class="item item-input" id="cadastrar-input4">
           <span class="input-label">Email</span>
-          <input type="email" placeholder="">
+          <input type="email" placeholder="" ng-model="user.email">
         </label>
         <label class="item item-input" id="cadastrar-input5">
           <span class="input-label">Senha</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="user.password">
         </label>
       </ion-list>
       <label class="item item-input" id="cadastrar-input6">
         <span class="input-label">Confirmação de Senha</span>
-        <input type="password" placeholder="">
+        <input type="password" placeholder="" ng-model="user.confirmPassword">
       </label>
-      <a ui-sref="entrar" id="cadastrar-button4" class="button button-balanced  button-block">SALVAR</a>
+      <a ng-click="save()" id="cadastrar-button4" class="button button-balanced  button-block">SALVAR</a>
     </form>
   </ion-content>
 </ion-view>
