@@ -3,6 +3,7 @@ angular.module('app.controllers')
 
   $scope.user = {};
 
+  // localStorage.setItem("loggedUserId", data.id);
   $scope.listProfiles = function(){
     BaseService.executarURLGet('/users/' + 'e60b6bb5-be45-4cca-af9b-7b8c6c5b4e3b' + '/profiles', $scope.profile)
       .success(function (data) {

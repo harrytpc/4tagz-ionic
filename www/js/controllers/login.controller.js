@@ -11,8 +11,10 @@ angular.module('app.controllers')
           return false;
         }
 
+        localStorage.setItem("loggedUserId", data.id);
         $rootScope.loggedUser = data;
-         $state.go('tabsController.scan', {}); 
+
+        $state.go('tabsController.scan', {}); 
       })
       .error(function (error) {
         ionicToast.show('Usuário inválido.', 'middle', false, 1500);
