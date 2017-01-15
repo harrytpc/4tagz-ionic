@@ -53,13 +53,10 @@
     <script src="js/controllers/scan.controller.js"></script>
     <script src="js/controllers/profiles.controller.js"></script>
     <script src="js/controllers/profileEdit.controller.js"></script>
-     
+    <script src="js/controllers/contacts.controller.js"></script>
+
     <script src="js/services.js"></script>
-    <script src="js/services/login.service.js"></script>
-    <script src="js/services/user.service.js"></script>
-    <script src="js/services/scan.service.js"></script>
-    <script src="js/services/profile.service.js"></script>
-    
+    <script src="js/services/base.service.js"></script>    
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
@@ -67,12 +64,12 @@
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
   <div>
-  <div>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+    <div>
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+    </div>
   </div>
-</div>
   </body>
 </html>

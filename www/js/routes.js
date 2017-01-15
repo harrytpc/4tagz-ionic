@@ -7,9 +7,6 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
-
   .state('tabsController.scan', {
     url: '/scan',
     views: {
@@ -35,7 +32,7 @@ angular.module('app.routes', [])
     views: {
       'tab3': {
         templateUrl: 'templates/contatos.html',
-        controller: 'contatosCtrl'
+        controller: 'ContactsCtrl'
       }
     }
   })

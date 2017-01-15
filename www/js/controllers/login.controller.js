@@ -1,10 +1,10 @@
 angular.module('app.controllers')
-.controller('LoginCtrl', function($scope, $ionicModal, $ionicPopup, $timeout, $rootScope, ionicToast, LoginService, $state ) {
+.controller('LoginCtrl', function($scope, $ionicModal, $ionicPopup, $timeout, $rootScope, ionicToast, BaseService, $state ) {
   $scope.login = {};
 
   $scope.executeLogin = function(){  
     if(validaLogin()){
-      LoginService.login($scope.login)
+      BaseService.executarURLPost('/users/login', $scope.login)
       .success(function (data) {
         if(!data && !data.id){
           ionicToast.show('Usuário inválido.', 'middle', false, 1500);

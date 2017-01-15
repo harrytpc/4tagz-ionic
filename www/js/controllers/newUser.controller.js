@@ -1,28 +1,22 @@
 angular.module('app.controllers')
-.controller('NewUserCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, ionicToast, UserService) {
+.controller('NewUserCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, ionicToast, BaseService) {
   $scope.user = {};
 
   $scope.save = function(){  
     if(validateUser()){
-      $scope.user = UserService.save($scope.user)
+      $scope.user = BaseService.executarURLPost('/users', $scope.user)
         .success(function (data) {
           if(!data && !data.id){
             ionicToast.show('Erro ao salvar.', 'middle', false, 1500);
             return false;
           }
           ionicToast.show('Usuario criado com sucesso.', 'middle', false, 1500);
-
-          // $rootScope.loggedUser = data;
-          //  alert('logado: ' + data);
-          //  $state.go('tabsController.scan', {}); 
-
-          $state.go('login', {}); 
-
+          $state.go('login', {});
         })
         .error(function (error) {
           ionicToast.show('Erro ao salvar.', 'middle', false, 1500);
         });
-    }    
+    }
   }
 
   function validateUser(){
