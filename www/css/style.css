@@ -1,1 +1,96 @@
-/* Empty. Add your own CSS if you like */
+.custom-alert .popup {
+    min-width: 80% !important;
+    height: 230px;
+}
+
+.custom-alert .popup-body {
+    overflow: inherit !important;
+    text-align: center;
+    position: relative;
+}
+
+/*
+.custom-alert .button:last-child {
+    background-color: #33cd5f;
+} 
+*/
+
+.float-button {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  padding: 30px;
+  font-size: 40px;
+  background: #3AC100;
+  position: fixed;
+  bottom: 60px; /* Adjust to where you want it */
+  right: 20px; /* Adjust to where you want it */
+  z-index: 9999;
+}
+
+.float-button .height_fix {
+  margin-top: 100%;
+}
+
+.float-button .content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: -20px; /* Note, this must be half the font size */
+  color: white;
+}
+
+
+
+.item.striped {
+  background-color: #DDFFE6;
+
+  &:nth-child(2n+1) {
+    background-color: #ffffff;
+  }
+
+  .buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &.action-buttons {
+      button {
+        height: 50%;
+        display: block;
+        width: 50px !important;
+      }
+    }
+
+    .button {
+      margin: 0;
+      height: 100%;
+      border-radius: 0
+    }
+  }
+}
+
+.item-thumbnail-left > img:first-child {
+  @include border-radius(5%);
+  overflow: hidden;
+  border: solid 1px $dark;
+  top: 20px;
+  left: 20px;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.event-buttons {
+
+  .button {
+    width: 50%;
+    float: left;
+    margin-top: 30px;
+  }
+
+}

@@ -16,7 +16,7 @@ angular.module('app.controllers')
       })
       .error(function (error) {
         ionicToast.show('Usuário inválido.', 'middle', false, 1500);
-      });       
+      });
     }
   }
 
