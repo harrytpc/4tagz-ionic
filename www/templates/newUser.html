@@ -3,17 +3,14 @@
     <form id="cadastrar-form2" class="list">
       <ion-list id="cadastrar-list2">
         <label class="item item-input" id="cadastrar-input4">
-          <span class="input-label">Email</span>
-          <input type="email" placeholder="" ng-model="user.email">
+          <input type="email" placeholder="Email" ng-model="user.email" required="">
         </label>
         <label class="item item-input" id="cadastrar-input5">
-          <span class="input-label">Senha</span>
-          <input type="password" placeholder="" ng-model="user.password">
+          <input type="password" placeholder="Senha" ng-model="user.password" required="">
         </label>
       </ion-list>
       <label class="item item-input" id="cadastrar-input6">
-        <span class="input-label">Confirmação de Senha</span>
-        <input type="password" placeholder="" ng-model="user.confirmPassword">
+        <input type="password" placeholder="Confirmação de Senha" ng-model="user.confirmPassword" required="">
       </label>
       <a ng-click="save()" id="cadastrar-button4" class="button button-balanced  button-block">SALVAR</a>
     </form>

@@ -1,45 +1,48 @@
 angular.module('app.controllers')
-.controller('NewUserCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, UserService) {
-
+.controller('NewUserCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, ionicToast, UserService) {
   $scope.user = {};
 
-  $scope.save = function(){
-  
-    $scope.user = UserService.save($scope.user)
-    .success(function (data) {
-      if(!data && !data.id){
-        alert('Erro ao salvar');
-        return false;
-      }
+  $scope.save = function(){  
+    if(validateUser()){
+      $scope.user = UserService.save($scope.user)
+        .success(function (data) {
+          if(!data && !data.id){
+            ionicToast.show('Erro ao salvar.', 'middle', false, 1500);
+            return false;
+          }
+          ionicToast.show('Usuario criado com sucesso.', 'middle', false, 1500);
 
-      alert('Usuario criado com sucesso');
+          // $rootScope.loggedUser = data;
+          //  alert('logado: ' + data);
+          //  $state.go('tabsController.scan', {}); 
 
-      // $rootScope.loggedUser = data;
-      //  alert('logado: ' + data);
-      //  $state.go('tabsController.scan', {}); 
+          $state.go('login', {}); 
 
-      $state.go('login', {}); 
-
-    })
-    .error(function (error) {
-      alert('Erro ao salvar');
-    });       
+        })
+        .error(function (error) {
+          ionicToast.show('Erro ao salvar.', 'middle', false, 1500);
+        });
+    }    
   }
 
   function validateUser(){
-    $scope.errors = [];
-    if(!$scope.login.email){
-      //alert('Preencher email');
-      $scope.errors.push('Preencher email');
-    }
-
-    if($scope.errors.length > 1){
+    if(!$scope.user.email){
+      ionicToast.show('Preencher email.', 'middle', false, 1500);
       return false;
     }
-
+    if(!$scope.user.password){
+      ionicToast.show('Preencher password.', 'middle', false, 1500);
+      return false;
+    }
+    
+    if(!$scope.user.confirmPassword){
+      ionicToast.show('Preencher confirmação password.', 'middle', false, 1500);
+      return false;
+    }
+    if($scope.user.password !== $scope.user.confirmPassword){
+      ionicToast.show('Password e confirmação devem ser iguais', 'middle', false, 1500);
+      return false;
+    }
     return true;
   }
-
-
-
 });
