@@ -3,20 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-    
-    
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    
+    <title></title>    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>    
     <script src="cordova.js"></script>
     
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-toast/src/ionic-toast.css" rel="stylesheet"> 
     <!-- <link href="css/ionic.app.css" rel="stylesheet"> -->
     <link href="css/style.css" rel="stylesheet">
     
-
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
@@ -52,6 +47,7 @@
     
     <script src="lib/ng-cordova.min.js"></script>
     <script src="lib/qrcode.js"></script> 
+    <script src="lib/ionic-toast/dist/ionic-toast.bundle.min.js"></script>
 
     <script src="js/controllers.js"></script>
     <script src="js/controllers/login.controller.js"></script>
@@ -59,13 +55,10 @@
     <script src="js/controllers/scan.controller.js"></script>
     <script src="js/controllers/profiles.controller.js"></script>
     <script src="js/controllers/profileEdit.controller.js"></script>
-     
+    <script src="js/controllers/contacts.controller.js"></script>
+
     <script src="js/services.js"></script>
-    <script src="js/services/login.service.js"></script>
-    <script src="js/services/user.service.js"></script>
-    <script src="js/services/scan.service.js"></script>
-    <script src="js/services/profile.service.js"></script>
-    
+    <script src="js/services/base.service.js"></script>    
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
@@ -73,12 +66,12 @@
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
   <div>
-  <div>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+    <div>
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+    </div>
   </div>
-</div>
   </body>
 </html>

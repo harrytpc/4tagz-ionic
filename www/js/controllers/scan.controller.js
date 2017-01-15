@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-.controller('ScanCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, ScanService, $cordovaBarcodeScanner) {
+.controller('ScanCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, BaseService, $cordovaBarcodeScanner) {
 
   $scope.user = {};
 

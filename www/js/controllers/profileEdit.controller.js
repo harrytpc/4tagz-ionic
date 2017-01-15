@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-.controller('ProfileEditCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, ScanService, $cordovaBarcodeScanner) {
+.controller('ProfileEditCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, BaseService, $cordovaBarcodeScanner) {
 
   $scope.user = {};
 
