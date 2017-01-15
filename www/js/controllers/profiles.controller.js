@@ -9,7 +9,6 @@ angular.module('app.controllers')
 
   $scope.findById = function(){
     // $scope.qrcode = jquery('#qrcode').qrcode("this plugin is great");
-
   }
 
   $scope.newProfile = function(){

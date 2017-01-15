@@ -1,12 +1,10 @@
 angular.module('app.controllers')
 .controller('ContactsCtrl', function($scope, $rootScope, ionicToast, BaseService) {
-	$scope.contactList = [];
-	if(!$rootScope.loggedUser){
-		$rootScope.loggedUser = {};
-		$rootScope.loggedUser.id = "312432432";
-	}
+	$scope.loggedUserId = localStorage.getItem("loggedUserId");
+
+	$scope.contactList = [];	
 	$scope.listContact = function(){  
-	   	BaseService.executarURLGet('/relationships/' + $rootScope.loggedUser.id)
+	   	BaseService.executarURLGet('/relationships/' + $scope.loggedUserId)
 			.success(function (data) {
 				$scope.contactList = [
 					{id:"123", name:"Harry", avatar:"img/ben.png"}, 
