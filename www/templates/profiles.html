@@ -1,7 +1,7 @@
 <ion-view title="Perfis" cache-view="false" id="page3">
   <ion-content padding="true" class="has-header">
     <ion-list id="perfis-list4">
-      <ion-item class="item-thumbnail-left" id="perfis-list-item4" ui-sref="tabsController.profileEdit">
+      <ion-item class="item-thumbnail-left" id="perfis-list-item4" ng-click="editProfile()">
         <img src="img/2ZDTMQ2hT8qCDjgShX72_qr_code-512.png">
         <h2>Perfil Pessoal</h2>
       </ion-item>
@@ -13,7 +13,7 @@
   </ion-content>
   <div class="float-button">
     <span class="height-fix">
-      <a class="content" ng-click=" $event.stopPropagation();">
+      <a class="content" ng-click="newProfile(); $event.stopPropagation();">
         <i class="ion-plus-round"> </i>
       </a>
     </span>

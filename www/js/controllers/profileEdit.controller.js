@@ -3,6 +3,8 @@ angular.module('app.controllers')
 
   $scope.user = {};
 
+  $scope.profile = {};
+
   // jquery('#qrcode').qrcode("this plugin is great");
 
   $scope.listProfiles = function(){
@@ -14,5 +16,8 @@ angular.module('app.controllers')
 
   }
 
+  $scope.save = function(){
+    alert($scope.profile);
+  }
 
 });

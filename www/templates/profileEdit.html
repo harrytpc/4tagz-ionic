@@ -1,43 +1,85 @@
-<ion-view title="MeuPerfil" id="page8">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-edit"></button>
-  </ion-nav-buttons>
-  <ion-content padding="true" class="has-header">
-    <ion-list id="meuPerfil-list5">
-      <ion-item class="item-divider" id="meuPerfil-list-item-divider2"> QRCode</ion-item>
-    </ion-list>
-    <div class="spacer" style="width: 300px; height: 17px;"></div>
-    <div style="margin: auto">
-      <!-- <img src="img/iaO6cxIQpe9OpRcPpqoB_qr_code-512.png" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;"> -->
-      <!-- <qrcode size="200" data="i am a lovely qr-code"></qrcode> -->
-      <!-- <div id="qrcode"></div> -->
-      <qrcode text="Harry Trinta Pereira da Costa" color-bright="#ff0000"></qrcode>
+<ion-modal-view class="customeModel" >
 
+<!-- <ion-view title="{{profile.id ? 'profile.name' : 'Novo Perfil'}}" id="page8"> -->
+  <!-- <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-edit" ng-if="profile.id"></button>
+  </ion-nav-buttons> -->
+
+  <ion-header-bar align-title="center" >
+    <button ng-click="modalEditProfile.hide()" class="button back-button buttons button header-item">
+      <i class="icon ion-android-close"></i> 
+    </button>
+    
+    <h1 class="title" >{{profile.id ? profile.name : 'Novo Perfil'}}</h1>
+      
+    <div class="buttons buttons-right" >
+      <button class="button button-icon icon ion-edit" ng-if="profile.id && !profile.editing" ng-click="editing()"></button>
     </div>
-    <div class="spacer" style="width: 300px; height: 22px;"></div>
-    <ion-list id="meuPerfil-list6">
-      <ion-item class="item-divider" id="meuPerfil-list-item-divider3"> Dados Pessoais</ion-item>
-    </ion-list>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="has-header">
+
+    <div ng-if="profile.id">
+      <div class="item item-divider"> QR Code </div> 
+      
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      
+      <!-- QRCODE -->
+      <div style="margin: auto; padding: 20px" >
+        <qrcode text="XXtexasdas" color-bright="#ff0000"></qrcode>
+      </div>
+      
+      <div class="spacer" style="width: 300px; height: 22px;"></div>
+
+    </div> 
+
+    <div class="item item-divider">
+        Dados Perfil
+    </div> 
+    <div class="spacer" style="width: 300px; height: 17px;"></div>
+    <form class="list">
+      <label class="item item-input">
+        <span class="input-label">Identificador</span>
+        <input type="text" placeholder="" ng-model="profile.profileName" ng-disabled="profile.id && !profile.editing">
+      </label>
+    </form>
+
+    <div class="item item-divider"> Dados Pessoais </div> 
     <div class="spacer" style="width: 300px; height: 17px;"></div>
     <form id="meuPerfil-form4" class="list">
       <label class="item item-input" id="meuPerfil-input7">
         <span class="input-label">Nome</span>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" ng-model="profile.name" ng-disabled="profile.id && !profile.editing">
+      </label>
+      <label class="item item-input" id="meuPerfil-input7">
+        <span class="input-label">Telefone</span>
+        <input type="text" placeholder="" ng-model="profile.phone1" ng-disabled="profile.id && !profile.editing">
+      </label>
+      <label class="item item-input" id="meuPerfil-input7">
+        <span class="input-label">Celular</span>
+        <input type="text" placeholder="" ng-model="profile.phone2" ng-disabled="profile.id && !profile.editing">
+      </label>
+      <label class="item item-input" id="meuPerfil-input7">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="" ng-model="profile.email" ng-disabled="profile.id && !profile.editing">
       </label>
       <label class="item item-input" id="meuPerfil-input10">
         <span class="input-label">Facebook</span>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" ng-model="profile.facebook" ng-disabled="profile.id && !profile.editing">
       </label>
       <label class="item item-input" id="meuPerfil-input11">
         <span class="input-label">Instagram</span>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" ng-model="profile.instagram" ng-disabled="profile.id && !profile.editing">
       </label>
       <label class="item item-input" id="meuPerfil-input12">
-        <span class="input-label">Input</span>
-        <input type="text" placeholder="">
+        <span class="input-label">Linkedin</span>
+        <input type="text" placeholder="" ng-model="profile.linkedin" ng-disabled="profile.id && !profile.editing">
       </label>
       <div class="spacer" style="width: 300px; height: 33px;"></div>
-      <button id="meuPerfil-button5" class="button button-balanced  button-block">SALVAR</button>
+      <button ng-click="save()" class="button button-balanced  button-block" ng-if="(profile.id && profile.editing)  || (!profile.id)">
+        SALVAR
+      </button>
     </form>
   </ion-content>
-</ion-view>
+<!-- </ion-view> -->
+</ion-modal-view>

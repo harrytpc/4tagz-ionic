@@ -11,6 +11,7 @@ angular.module('app.routes', [])
   
 
   .state('tabsController.scan', {
+    cache: false,
     url: '/scan',
     views: {
       'tab1': {
@@ -21,6 +22,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.profiles', {
+    cache: false,
     url: '/profiles',
     views: {
       'tab2': {
@@ -31,6 +33,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.contatos', {
+    cache: false,
     url: '/contatos',
     views: {
       'tab3': {
@@ -69,6 +72,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.profileEdit', {
+    cache: false,
     url: '/profileEdit',
     views: {
       'tab2': {

@@ -10,9 +10,15 @@ angular.module('app.controllers')
           // "Result: " + result.text + "\n" +
           // "Format: " + result.format + "\n" +
           // "Cancelled: " + result.cancelled);
-          $scope.userData = result.text;
+          $scope.contactData = result.text;
 
-          
+          $ionicModal.fromTemplateUrl('templates/modal-addcontact.html', {
+            scope: $scope
+          }).then(function(modal) {
+            $scope.modalAddContact = modal;
+            $scope.modalAddContact.show()
+          });
+
 
         },
         function (error) {
@@ -20,6 +26,10 @@ angular.module('app.controllers')
         }
       );
 
+  }
+
+  $scope.addContact = function(){
+    //TODO adicionar contato
   }
 
 
