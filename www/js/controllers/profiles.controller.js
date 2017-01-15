@@ -5,7 +5,9 @@ angular.module('app.controllers')
 
   // localStorage.setItem("loggedUserId", data.id);
   $scope.listProfiles = function(){
-    BaseService.executarURLGet('/users/' + 'e60b6bb5-be45-4cca-af9b-7b8c6c5b4e3b' + '/profiles', $scope.profile)
+
+
+    BaseService.executarURLGet('/users/' + localStorage.getItem("loggedUserId") + '/profiles', $scope.profile)
       .success(function (data) {
         
         // $scope.modalEditProfile.hide();
@@ -54,6 +56,8 @@ angular.module('app.controllers')
 
   $scope.editProfile = function(profile){
     $scope.profile = profile; 
+    $scope.profile.qrcode = JSON.stringify(profile.id);
+
     // $scope.profile.id = 'teste1';
     // $scope.profile.name = 'xxxx';
     // $scope.editEvent = {};

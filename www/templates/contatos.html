@@ -2,9 +2,57 @@
   <ion-content padding="true" class="has-header">
     <ion-list id="contatos-list7" ng-repeat="contact in contactList">
       <ion-item class="item-avatar" id="contatos-list-item10" ng-click="detail(contact)">
-        <img src="{{contact.avatar}}">
-        <h2>{{contact.name}}</h2>
+        <!-- <img src="{{contact.avatar}}"> -->
+        <img src="img/person.png">
+        
+        <h2>{{contact.beepedProfile.name}}</h2>
       </ion-item>
     </ion-list>
   </ion-content>
+
+  <script id="templates/modal-viewcontact.html" type="text/ng-template">
+        <ion-modal-view class="custom-alert">
+            <ion-header-bar align-title="center" class="bar">
+                <button ng-click="modalViewContact.hide();$event.stopPropagation();" class="button back-button buttons button header-item">
+                    <i class="icon ion-android-close"></i> 
+                </button>
+                <h1 class="title">{{contactData.name}}</h1>
+                <div class="buttons buttons-right"></div>
+            </ion-header-bar>
+
+            <ion-content item-button-bottom>
+            	<ul class="list" >
+				    <li class="item">
+				      Nome: {{contactData.name}}
+				    </li>
+				    <li class="item">
+				      Telefone: {{contactData.phone1}}
+				    </li>
+				    <li class="item">
+				      Celular: {{contactData.phone2}}
+				    </li>
+				    <li class="item">
+				      Email: {{contactData.email}}
+				    </li>
+				    <li class="item">
+				      Facebook: {{contactData.facebook}}
+				    </li>
+				    <li class="item">
+				      Instagram: {{contactData.instagram}}
+				    </li>
+				    <li class="item">
+				      Linkedin: {{contactData.linkedin}}
+				    </li>
+				</ul>
+				<div style="text-align: center">
+					<div style="margin: auto; padding: 20px" >
+			        	<qrcode text="{{contactData.qrcode}}" color-bright="#ff0000"></qrcode>
+			      	</div>
+		      	</div>
+				
+            </ion-content>
+            
+        </ion-modal-view>
+    </script>
+
 </ion-view>

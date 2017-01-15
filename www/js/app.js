@@ -15,7 +15,9 @@ angular.module('app', ['ionic', 'ionic-toast', 'ngCordova', 'app.controllers', '
 })
 .run(function($ionicPlatform, $rootScope) {
 
-   $rootScope.baseUrlBackend = 'http://localhost:8080/4tagz';
+   // $rootScope.baseUrlBackend = 'http://localhost:8080/4tagz';
+   $rootScope.baseUrlBackend = 'http://192.168.0.87:8080/4tagz';
+   
    
    $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
